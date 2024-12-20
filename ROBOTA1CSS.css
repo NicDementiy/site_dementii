@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+*{
+    margin: 0 ;
+    padding: 0;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('img/bac.png'); 
+    background-size: cover; 
+    background-position: center left right x y; 
+}
+
+a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.content{
+    padding: 10px 0;
+    background-color:  #4CAF50;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 20%;
+    
+}
+
+header{
+    
+    width: 100%;  
+    margin: 0 auto;
+    padding: 0;
+    background-color:  #4CAF50;  
+}
+
+.ava {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute; 
+    top: 10px; 
+    right: 190px;
+}
+.logo_slytherin img {
+    width: 50px;
+    height: 50px;
+}
+.logo_slytherin{
+  margin: 0 auto;
+  
+}
+.name {
+    margin: 0;
+    font-weight: 600;
+    color: white;
+    font-size: 20px;
+    position: absolute; 
+    top: 20px; 
+    right: 10px; 
+}
+.menu_item{
+    margin-right: 15px;
+}
+.menu_item ul li{
+    list-style: none;
+    display: block;
+    float: left;
+    padding: 25px;
+
+}
+.menu_item ul li a{
+    transition: all 0.7s ease;
+}
+.menu_item ul li a:hover{
+    color: #4CAF50;
+}
+.open {
+    display: flex !important;
+}
+span{
+    color: #4CAF50;
+    font-weight: 400;
+}
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+    margin-top: 10px;
+    margin-right: 10px;
+
+}
+.burger span {
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: rgb(255, 255, 255);
+
+}
+.burger::before,
+.burger::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+
+}
+.burger::before {
+    top: 0;
+}
+.burger::after {
+    bottom: 0;
+}
+
+.burger.active span {
+    transform: scale(0);
+
+}
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger.active::after {
+    top: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+    transition: all 1s;
+}
+.menu_item{
+    display: flex;
+    justify-content: center;
+}
+.arrows {
+    width: 19%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.arrows i {
+    color: #4CAF50;
+}
+
+p{
+    margin-right: 10px;
+    font-size: 12px;
+    text-align: left;
+}
+button{
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 70px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+input:focus{
+    outline: 2px solid #4CAF50;
+}
+button:hover{
+    background-color: #4CAF50;
+}
+.main_name{
+    
+    color: #fff;
+    margin: 0 auto;
+    font-size: 17px;
+    padding: 15px; 
+    font-weight: 500;
+    text-align: center;
+}
+input{
+    
+    width: 190px;
+    margin: 8px 0;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.home i{
+    display: none;
+}
+@media (max-width: 550px ){
+    .content{
+        margin: 0;
+        margin-top: 50px;
+        width: 100%;
+        padding: 10px 0;
+    }
+    header{
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        }
+        .header_style{
+            margin: 0;
+        }
+        .logo_slytherin img{
+            margin-right: 50px;
+        }
+        .burger{
+            display: flex;
+        transition: all 1s;
+        }
+
+        .snitch img {
+            width: 100px;
+            position: absolute;
+        }
+        .menu_item{
+            height: 50%;
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            overflow-y: auto;
+            background-color:  #4CAF50;
+            transition: all 1s;
+        }
+        .menu_item ul{
+            flex-direction: column;
+            row-gap: 30px;
+            margin-right: 170px;
+            transition: all 1s;
+        }
+        .arrows{
+            width: 80%;
+        }
+        .home i{
+            display: block;
+            font-size: 17px;
+            margin-left: 13px;
+        }
+}
+
+.mainBlock {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    border: 2px solid black;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+}
+
+.block.black {
+    background-color: black;
+}
+
+.arrows {
+    transform: translateY(750%); 
+    text-align: center; 
+}
+
+#snitch {
+    position: absolute; 
+    left: 0;       
+    top: 50%;           
+    transform: translateY(-150%); 
+    transition: none;   
+}
+.block.white {
+    background-color: white;
+}
+canvas {
+    border: 1px solid #2a2a2a;
+  }

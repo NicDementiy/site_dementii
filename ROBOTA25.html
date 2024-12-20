@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Робота№25:</title>
+  <link rel="stylesheet" href="ROBOTA1CSS.css">
+  <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+  <script src="../burger.menu.js"></script>
+  <style>
+    .loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #3498db;
+      border-radius: 50%;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="img/name.png" class="ava">
+                <p class="name">Pavlov Dementii</p>
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <p class="main_name">Введіть розміри зірочки та швидкість її обертання</p>
+    <div class="content">
+        <p>Введіть кількість кутів зірочки та швидкість обертання:</p>
+        <input type="number" id="points" min="5" value="5" placeholder="Кількість кутів">
+        <input type="number" id="radius" min="10" value="50" placeholder="Радіус">
+        <input type="number" id="speed" min="0" step="0.01" value="0.01" placeholder="Швидкість обертання">
+        <button onclick="drawStar()">Push</button>
+        <br>
+
+        <canvas id="myCanvas"></canvas>
+    </div>
+    <div class="arrows">
+        <a href="ROBOTA24.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+        <a href="ROBOTA26.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+<script>
+    var angle = 0; 
+    var rotationSpeed = 0.01; 
+
+    function drawStar() {
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var points = document.getElementById('points').value;
+        var radius = document.getElementById('radius').value;
+        rotationSpeed = parseFloat(document.getElementById('speed').value); 
+        canvas.width = 300;
+        canvas.height = 300;
+        animateRotation(ctx, canvas.width / 2, canvas.height / 2, points, radius);
+    }
+
+    function animateRotation(ctx, centerX, centerY, points, radius) {
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); 
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate(angle); 
+
+        drawStarShape(ctx, points, radius);
+
+        ctx.restore();
+
+        angle += rotationSpeed;
+
+        requestAnimationFrame(function() {
+            animateRotation(ctx, centerX, centerY, points, radius);
+        });
+    }
+
+    function drawStarShape(ctx, points, radius) {
+        var step = Math.PI / points; 
+
+        ctx.beginPath();
+        for (var i = 0; i < 2 * points; i++) {
+            var currentRadius = (i % 2 === 0) ? radius : radius / 2;
+            var x = currentRadius * Math.cos(i * step);
+            var y = currentRadius * Math.sin(i * step);
+
+            if (i === 0) {
+                ctx.moveTo(x, y); 
+            } else {
+                ctx.lineTo(x, y); 
+            }
+        }
+        ctx.closePath();
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
+</script>
+</body>
+</html>

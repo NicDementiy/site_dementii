@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+h1, h2, h3, p, a, button {
+    font-family: 'Montserrat', Arial, sans-serif; 
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/bac.png');
+    background-size: cover; 
+    background-position: center left right x y; 
+    
+    
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+}
+
+header h1 {
+    font-size: 18px;
+    margin: 0;
+    padding: 5px 15px;
+    border: 2px solid #4CAF50;
+    background-color: #1e1e1e;
+    color: #4CAF50;
+    border-radius: 15px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; 
+    color: #e0e0e0; 
+}
+
+main {
+    max-width: 1200px; 
+    margin: 15px auto; 
+    padding: 45px; 
+    background: #1e1e1e; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); 
+    border-radius: 15px; 
+}
+
+.about h2 {
+    font-size: 42px; 
+    color: #4CAF50; 
+    margin-bottom: 10px; 
+}
+
+.about p {
+    font-size: 20px; 
+}
+
+.about {
+    padding: 30px; 
+    background-color: #2a2a2a; 
+    border: 2px solid #4CAF50; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    margin-bottom: 30px; 
+    color: #e0e0e0; 
+    line-height: 1.8; 
+    animation: fadeInScale 1.5s ease-in-out; 
+}
+
+.about h2 {
+    font-size: 32px; 
+    color: #4CAF50; 
+    margin-bottom: 15px; 
+    animation: textGlow 2s infinite alternate; 
+}
+
+.about p {
+    font-size: 20px; 
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8); 
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); 
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+    }
+    to {
+        text-shadow: 0 0 20px #4CAF50, 0 0 40px #4CAF50;
+    }
+}
+
+
+h2 {
+    color: #4CAF50;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; 
+    list-style: none;
+    padding: 0; 
+    margin: 0; 
+}
+
+.button-container li {
+    list-style: none; 
+}
+
+.button-container button {
+    padding: 15px 30px; 
+    font-size: 28px; 
+    background-color: #333;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    animation: fadeInButtons 1.5s ease-in-out; 
+}
+
+@keyframes fadeInButtons {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+.button-container button {
+    padding: 15px 30px; 
+    font-size: 28px; 
+    background-color: #333;
+    color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: buttonAppear 1s ease-out;
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); 
+    }
+}
+
+.button-container button:hover {
+    background-color: #4CAF50;
+    color: black;
+    transform: scale(1.1); 
+    box-shadow: 0 0 15px #4CAF50, 0 0 30px #4CAF50; 
+}
+
+.button-container button:hover {
+    background-color: #4CAF50;
+    color: black;
+    transform: scale(1.1); 
+}
+
+
+
+header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 5px;
+}
+
+.social-links a {
+    color: #4CAF50; 
+    font-size: 18px; 
+    text-decoration: none; 
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+    transform: scale(1.1); 
+}
+
+

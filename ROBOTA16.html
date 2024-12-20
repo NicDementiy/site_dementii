@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Робота №16:</title>
+    <link rel="stylesheet" href="ROBOTA1CSS.css"> 
+    <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+    <style>
+
+        .container button {
+            padding: 15px 30px; 
+            font-size: 28px; 
+            background-color: #333;
+            color: white;
+            border: 1px solid #4CAF50;
+            border-radius: 10px; 
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            flex-direction: column;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #greeting {
+            font-size: 24px;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+
+
+        .arrows a {
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="img/name.png" class="ava">
+                <p class="name">Pavlov Dementii</p>
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div>
+            <p class="main_name">Введіть кількість разів, скільки ви хочете побачити привітання:</p>
+            <input type="number" id="number" placeholder="Введіть кількість">
+            <button onclick="showGreeting()">Показати привітання</button>
+            <div id="greeting"></div> 
+        </div>
+    </div>
+
+    <div class="arrows">
+        <a href="ROBOTA15.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="ROBOTA17.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <script>
+        function showGreeting() {
+            let count = document.getElementById("number").value; 
+            let greetingText = ""; 
+
+            if (count && count > 0) {
+                for (let i = 0; i < count; i++) {
+                    greetingText += "Слава Україні!<br>"; 
+                }
+                document.getElementById("greeting").innerHTML = greetingText;
+            } else {
+                document.getElementById("greeting").innerHTML = "Будь ласка, введіть коректну кількість!";
+            }
+        }
+    </script>
+
+</body>
+</html>

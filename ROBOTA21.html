@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Робота№21:</title>
+  <link rel="stylesheet" href="ROBOTA1CSS.css">
+  <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+  <script src="../burger.menu.js"></script>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="img/name.png" class="ava">
+                <p class="name">Pavlov Dementii</p>
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <p class="main_name">Введіть розмір сторони квадрата</p>
+    <div class="content">
+        <p>Введіть довжину сторони квадрата:</p>
+        <input type="number" id="sideLength" min="1" value="50">
+        <button onclick="drawSquare()"> Push</button>
+        <br>
+        <p id="perimeter"></p>
+
+        <canvas id="myCanvas"></canvas>
+    </div>
+    <div class="arrows">
+        <a href="ROBOTA20.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+        <a href="ROBOTA22.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+<script>
+    function drawSquare() {
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var sideLength = document.getElementById('sideLength').value;
+        canvas.width = sideLength * 2; 
+        canvas.height = sideLength * 2;
+
+
+
+        var perimeter = sideLength * 4;
+        document.getElementById('perimeter').innerText = "Периметр квадрата: " + perimeter + " одиниць";
+    }
+</script>
+</body>
+</html>

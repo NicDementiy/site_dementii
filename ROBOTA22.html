@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Робота№22:</title>
+  <link rel="stylesheet" href="ROBOTA1CSS.css">
+  <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+  <script src="../burger.menu.js"></script>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="img/name.png" class="ava">
+                <p class="name">Pavlov Dementii</p>
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <p class="main_name">Введіть розміри прямокутника</p>
+    <div class="content">
+        <p>Введіть довжину та ширину прямокутника:</p>
+        <input type="number" id="length" min="1" value="100" placeholder="Довжина">
+        <input type="number" id="width" min="1" value="50" placeholder="Ширина">
+        <button onclick="drawRectangle()">Push</button>
+        <br>
+        <p id="perimeter"></p>
+
+        <canvas id="myCanvas"></canvas>
+    </div>
+    <div class="arrows">
+        <a href="ROBOTA21.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+        <a href="ROBOTA23.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+<script>
+    function drawRectangle() {
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        var length = document.getElementById('length').value;
+        var width = document.getElementById('width').value;
+
+        canvas.width = length * 2; 
+        canvas.height = width * 2; 
+
+        var perimeter = 2 * (Number(length) + Number(width));
+        document.getElementById('perimeter').innerText = "Периметр прямокутника: " + perimeter + " одиниць";
+    }
+</script>
+</body>
+</html>

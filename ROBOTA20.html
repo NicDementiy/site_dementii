@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Робота№20: </title>
+  <link rel="stylesheet" href="ROBOTA1CSS.css">
+  <script src="https://kit.fontawesome.com/20e02f2fbf.js" crossorigin="anonymous"></script>
+  <script src="../burger.menu.js"></script>
+</head>
+<body>
+    <header>
+        <div id="snow"></div>
+        <div class="header_style">
+            <div class="logo">
+                <img src="img/name.png" class="ava">
+                <p class="name">Pavlov Dementii</p>
+            </div>
+            <div class="menu_item">
+                <ul>
+                    <li>
+                        <a href="index.html" target="_blank">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <p class="main_name">Введіть скільки зірок ви хочете побачити</p>
+    <div class="content">
+        <p>Введіть кількість зірок:</p>
+        <input type="number" id="starCount" min="1" value="10">
+        <button onclick="generateStars()"> Push</button>
+        <br>
+
+  <canvas id="myCanvas"></canvas>
+</div>
+<div class="arrows">
+    <a href="ROBOTA19.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <a href="ROBOTA21.html"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
+<script>
+     function generateStars() {
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+
+      var numberOfStars = document.getElementById('starCount').value;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (var j = 0; j < numberOfStars; j++) {
+        drawStar(ctx, canvas.width, canvas.height);
+      }
+    }
+
+    function drawStar(ctx, canvasWidth, canvasHeight) {
+      var x = Math.random() * canvasWidth;
+      var y = Math.random() * canvasHeight;
+      var radius = Math.random() * 20 + 10; 
+      var spikes = 5;
+      var color = getRandomColor();
+      
+      var rot = (Math.PI / 2) * 3;
+      var step = Math.PI / spikes;
+
+      ctx.beginPath();
+      ctx.moveTo(x, y - radius);
+
+      for (var i = 0; i < spikes; i++) {
+        x1 = x + Math.cos(rot) * radius;
+        y1 = y + Math.sin(rot) * radius;
+        ctx.lineTo(x1, y1);
+        rot += step;
+
+        x2 = x + Math.cos(rot) * (radius / 2);
+        y2 = y + Math.sin(rot) * (radius / 2);
+        ctx.lineTo(x2, y2);
+        rot += step;
+      }
+      ctx.lineTo(x, y - radius);
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    function getRandomColor() {
+      return '#' + (Math.random() * 0xFFFFFF << 0).toString(16); 
+    }
+</script>
+</body>
+</html>
